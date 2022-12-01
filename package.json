@@ -1,0 +1,25 @@
+{
+  "name": "aoc21",
+  "version": "1.0.0",
+  "description": "A project for solving Advent of Code 2021 problems.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmclane2007/aoc21.git"
+  },
+  "author": "James McLane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmclane2007/aoc21/issues"
+  },
+  "homepage": "https://github.com/jmclane2007/aoc21#readme",
+  "dependencies": {
+    "@types/node": "^16.11.11"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  }
+}
