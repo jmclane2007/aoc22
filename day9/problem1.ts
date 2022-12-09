@@ -40,14 +40,14 @@ async function processInstructions() {
       } else if(headUp - tailUp > 1) {
         if(headRight - tailRight > 0) {
           tailRight++;
-        } else if (headRight - tailRight > 0) {
+        } else if (headRight - tailRight < 0) {
           tailRight--;
         }
         tailUp++;
       } else if(headUp - tailUp < -1) {
         if(headRight - tailRight > 0) {
           tailRight++;
-        } else if (headRight - tailRight > 0) {
+        } else if (headRight - tailRight < 0) {
           tailRight--;
         }
         tailUp--;
