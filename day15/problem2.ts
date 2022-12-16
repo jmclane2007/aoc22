@@ -17,8 +17,8 @@ async function processInstructions() {
   // Manhattan distance is Math.abs(x1 - x2) + Math.abs(y1 - y2)
   // build ranges based on distance
   const maxBounds = 4000000;
-  const allMergedRanges = []; 
-  for(let row = 0; row <= maxBounds; row++) {
+  let itemY = -1;
+  for(let row = 0; row <= maxBounds && itemY === -1; row++) {
     const ranges: number[][] = [];
   
     for(let i = 0; i < sensors.length; i++) {
@@ -32,19 +32,13 @@ async function processInstructions() {
     }
     
     const mergedRanges = mergeRanges(ranges);
-    allMergedRanges.push(mergedRanges);
-  }
-
-  let itemY = 0;
-  for(let i = 0; i <= maxBounds; i++) {
-    if(allMergedRanges[i].length > 1) {
-      itemY = i;
-      console.log(allMergedRanges[i][0][1] + 1);
-      console.log(i);
+    if(mergedRanges.length > 1) {
+      itemY = row;
+      console.log(mergedRanges[0][1] + 1);
+      console.log(row);
+      console.log((maxBounds * (mergedRanges[0][1] + 1)) + itemY)
     }
   }
-
-  console.log((maxBounds * (allMergedRanges[itemY][0][1] + 1)) + itemY)
 }
 
 function mergeRanges(ranges: number[][]) {
